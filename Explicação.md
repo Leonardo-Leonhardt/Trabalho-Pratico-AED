@@ -16,7 +16,7 @@ O projeto está organizado em pastas e arquivos:
 
 #### Candidato
 
-- **Atributos:** Nome, CPF, Nota Redação, Nota Matemática, Nota Linguagens, Opção 1, Opção 2.
+- **Atributos:** Nome, Nota Redação, Nota Matemática, Nota Linguagens, Opção 1, Opção 2.
 - **Métodos:** Calcula a média das notas, retorna a opção de curso com maior nota, compara candidatos com base na média e nos critérios de desempate.
 
 #### Curso
