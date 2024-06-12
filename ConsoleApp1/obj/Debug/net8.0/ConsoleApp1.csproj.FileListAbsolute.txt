@@ -1,0 +1,15 @@
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.AssemblyInfo.cs
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.sourcelink.json
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.exe
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.deps.json
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.runtimeconfig.json
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.dll
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\bin\Debug\net8.0\ConsoleApp1.pdb
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.dll
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\refint\ConsoleApp1.dll
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.pdb
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ConsoleApp1.genruntimeconfig.cache
+C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\ConsoleApp1\obj\Debug\net8.0\ref\ConsoleApp1.dll
