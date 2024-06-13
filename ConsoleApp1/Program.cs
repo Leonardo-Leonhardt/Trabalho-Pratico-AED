@@ -11,6 +11,7 @@ namespace Facudade
         static int numAluno;
         static Curso[] curso;
         static Candidato[] candidato;
+        static Dictionary<int, Curso> cursoComId = new Dictionary<int, Curso>();
 
         static void Main(string[] args)
         {
@@ -20,6 +21,9 @@ namespace Facudade
             using (StreamReader reader = new StreamReader(arquivo))
             {
                 string linha;
+                int valor1 = 0;
+                int valor2 = 0;
+
 
                 while ((linha = reader.ReadLine()) != null)
                 {
@@ -50,23 +54,40 @@ namespace Facudade
                     {
                         string[] valores = linha.Split(';');
 
-                        AddMaterias(linha, valores);
+                        AddMaterias(linha, valores, valor1);
 
                         cont++;
-
+                        valor1++;
                     }
                     else
                     {
                         string[] valores = linha.Split(';');
-                        int valor = 0;
 
-                        AddAluno(linha, valores, valor);
+                        AddAluno(linha, valores, valor2);
 
-                        valor++;
                         cont++;
+                        valor2++;
 
                     }
                 }
+
+
+                //foreach (KeyValuePair<int, Curso> curso in cursoComId.Values)
+                //{
+                //    Console.Write($"Id: {curso.Key}");
+                //    Console.Write($"Materia: {curso.Value.GetNome()}");
+                //    Console.Write($"Vagas: {curso.Value.GetVaga()}");
+
+                //}
+
+                foreach (var item in cursoComId)
+                {
+                    Console.WriteLine($"Curso com ID {item.Key}: {item.Value.GetName()}: {item.Value.GetVaga()}");
+                }
+
+
+
+
 
                 Console.ReadKey();
             }
@@ -95,7 +116,7 @@ namespace Facudade
 
         }
 
-        static void AddMaterias(string linha, string[] valores)
+        static void AddMaterias(string linha, string[] valores, int valor)
         {
 
             if (valores.Length == 3)
@@ -103,17 +124,16 @@ namespace Facudade
 
                 int id = Convert.ToInt32(valores[0]);
                 string materia = valores[1];
-                int vagas = Convert.ToInt32(valores[2]);
+                int vaga = Convert.ToInt32(valores[2]);
+
+                curso[valor] = new Curso(materia, vaga);
+
+                cursoComId[id] = curso[valor];
+
 
             }
 
             else { throw new ArgumentException("Erro: A string não é válido.!!"); } // Exceção
-
-
-            for (int i = 0; i < curso.Length; i++)
-            {
-
-            }
 
         }
 
