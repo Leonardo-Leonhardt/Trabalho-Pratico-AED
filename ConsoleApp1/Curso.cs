@@ -1,8 +1,14 @@
 ﻿using System;
 
-public class Curso
-{
-	public Curso()
+namespace Facudade{
+
+	public class Curso
 	{
+		public Curso()
+		{
+		}
 	}
 }
+
+
+// 1;Matemática;2
