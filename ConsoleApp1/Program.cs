@@ -11,15 +11,18 @@ namespace Facudade
         static int numAluno;
         static Curso[] curso;
         static Candidato[] candidato;
+        static Dictionary<int, Curso> cursoComId = new Dictionary<int, Curso>();
 
         static void Main(string[] args)
         {
-            string arquivo = @"C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\teste.txt"; // Caminho do arquivo
+            string arquivo = @"C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\Exemplos\teste4.txt"; // Caminho do arquivo
 
             // Usando um bloco "using" para garantir o fechamento automático do arquivo
             using (StreamReader reader = new StreamReader(arquivo))
             {
                 string linha;
+                int valor1 = 0;
+                int valor2 = 0;                
 
                 while ((linha = reader.ReadLine()) != null)
                 {
@@ -50,23 +53,41 @@ namespace Facudade
                     {
                         string[] valores = linha.Split(';');
 
-                        AddMaterias(linha, valores);
+                        AddMaterias(linha, valores, valor1);
 
                         cont++;
-
+                        valor1++;
                     }
                     else
                     {
                         string[] valores = linha.Split(';');
-                        int valor = 0;
 
-                        AddAluno(linha, valores, valor);
+                        AddAluno(linha, valores, valor2);
 
-                        valor++;
                         cont++;
+                        valor2++;
 
                     }
                 }
+
+                Console.WriteLine();
+
+                foreach (var item in cursoComId)
+                {
+                    Console.WriteLine($"Curso com ID {item.Key}: {item.Value.GetName()}, vagas: {item.Value.GetVaga()}");
+                }
+
+                // Ordenar o array de candidatos por nota média
+                MergeSortCandidato.Sort(candidato);
+
+                // Imprimir o array de candidatos ordenado
+                Console.WriteLine("\nArray de candidatos ordenado por nota média:");
+                foreach (Candidato aluno in candidato)
+                {
+                    Console.WriteLine($"Nome: {aluno.GetNome()}, Nota Média: {aluno.GetNotaMedia()}, Opção 1: {aluno.GetOpcao1()}, Opção 2: {aluno.GetOpcao2()}");
+                }
+
+
 
                 Console.ReadKey();
             }
@@ -95,7 +116,7 @@ namespace Facudade
 
         }
 
-        static void AddMaterias(string linha, string[] valores)
+        static void AddMaterias(string linha, string[] valores, int valor)
         {
 
             if (valores.Length == 3)
@@ -103,17 +124,16 @@ namespace Facudade
 
                 int id = Convert.ToInt32(valores[0]);
                 string materia = valores[1];
-                int vagas = Convert.ToInt32(valores[2]);
+                int vaga = Convert.ToInt32(valores[2]);
+
+                curso[valor] = new Curso(materia, vaga); // Cria os cursos
+
+                cursoComId[id] = curso[valor]; // Coloca o Id nos cursos
+
 
             }
 
             else { throw new ArgumentException("Erro: A string não é válido.!!"); } // Exceção
-
-
-            for (int i = 0; i < curso.Length; i++)
-            {
-
-            }
 
         }
 
@@ -144,7 +164,7 @@ namespace Facudade
 
 
 
-            candidato[valor].Print();
+            //candidato[valor].Print();
 
         }
     }

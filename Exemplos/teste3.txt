@@ -1,0 +1,17 @@
+5;11
+10;Ciência da Computação;3
+20;Engenharia Mecânica;2
+30;Administração;4
+40;Direito;3
+50;Medicina;2
+Alice;750;800;850;10;20
+Bob;600;700;650;20;30
+Carol;800;850;900;30;40
+David;700;750;800;40;50
+Emily;650;700;750;50;10
+Frank;850;900;950;10;30
+George;750;800;850;20;40
+Hannah;600;650;700;30;50
+Isabella;700;750;800;40;10
+Jack;800;850;900;50;20
+Kelly;650;700;750;10;40
