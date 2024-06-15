@@ -15,15 +15,14 @@ namespace Facudade
 
         static void Main(string[] args)
         {
-            string arquivo = @"C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\teste.txt"; // Caminho do arquivo
+            string arquivo = @"C:\Users\lleon\OneDrive - sga.pucminas.br\2° semestre\Algoritmo e Estrutura de Dados\Trabalho\Trabalho-Pratico-AED\Exemplos\teste4.txt"; // Caminho do arquivo
 
             // Usando um bloco "using" para garantir o fechamento automático do arquivo
             using (StreamReader reader = new StreamReader(arquivo))
             {
                 string linha;
                 int valor1 = 0;
-                int valor2 = 0;
-
+                int valor2 = 0;                
 
                 while ((linha = reader.ReadLine()) != null)
                 {
@@ -71,21 +70,22 @@ namespace Facudade
                     }
                 }
 
-
-                //foreach (KeyValuePair<int, Curso> curso in cursoComId.Values)
-                //{
-                //    Console.Write($"Id: {curso.Key}");
-                //    Console.Write($"Materia: {curso.Value.GetNome()}");
-                //    Console.Write($"Vagas: {curso.Value.GetVaga()}");
-
-                //}
+                Console.WriteLine();
 
                 foreach (var item in cursoComId)
                 {
-                    Console.WriteLine($"Curso com ID {item.Key}: {item.Value.GetName()}: {item.Value.GetVaga()}");
+                    Console.WriteLine($"Curso com ID {item.Key}: {item.Value.GetName()}, vagas: {item.Value.GetVaga()}");
                 }
 
+                // Ordenar o array de candidatos por nota média
+                MergeSortCandidato.Sort(candidato);
 
+                // Imprimir o array de candidatos ordenado
+                Console.WriteLine("\nArray de candidatos ordenado por nota média:");
+                foreach (Candidato aluno in candidato)
+                {
+                    Console.WriteLine($"Nome: {aluno.GetNome()}, Nota Média: {aluno.GetNotaMedia()}, Opção 1: {aluno.GetOpcao1()}, Opção 2: {aluno.GetOpcao2()}");
+                }
 
 
 
@@ -126,9 +126,9 @@ namespace Facudade
                 string materia = valores[1];
                 int vaga = Convert.ToInt32(valores[2]);
 
-                curso[valor] = new Curso(materia, vaga);
+                curso[valor] = new Curso(materia, vaga); // Cria os cursos
 
-                cursoComId[id] = curso[valor];
+                cursoComId[id] = curso[valor]; // Coloca o Id nos cursos
 
 
             }
@@ -164,7 +164,7 @@ namespace Facudade
 
 
 
-            candidato[valor].Print();
+            //candidato[valor].Print();
 
         }
     }
