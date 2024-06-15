@@ -27,6 +27,3 @@ namespace Facudade
 
 
 }
-
-
-// 1;Matemática;2

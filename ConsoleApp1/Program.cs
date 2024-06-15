@@ -162,10 +162,6 @@ namespace Facudade
             }
             catch { Console.WriteLine("Erro: A string não é válido.**"); } // Exceção
 
-
-
-            //candidato[valor].Print();
-
         }
     }
 }

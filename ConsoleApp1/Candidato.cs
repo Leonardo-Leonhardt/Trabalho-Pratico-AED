@@ -47,7 +47,6 @@ namespace Facudade
         {
             Console.WriteLine($"Nome: {GetNome()} {GetNotaMedia()} {GetNotaRedacao()} {GetNotaMatematica()} {GetNotaLinguagem()}");
         }
-
     }
 
     public class MergeSortCandidato
