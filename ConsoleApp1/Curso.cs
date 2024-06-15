@@ -19,10 +19,52 @@ namespace Facudade
         public int GetVaga() { return Vaga; }
 
 
+        public void Print() { Console.WriteLine($"Nome: {GetName()} \nVagas: {GetVaga()}\n"); }
+    }
+
+
+    public class ListaCurso
+    {
+        private List<Candidato> lista;
+
+        public ListaCurso(Candidato candidato)
+        {
+            lista = new List<Candidato>();
+
+            if (candidato == null)
+            {
+                throw new ArgumentException("Erro: Candidato inválido.!!");
+            }
+            else
+            {
+                lista.Add(candidato);
+            }
+        }
+
+        public ListaCurso()
+        {
+            lista = new List<Candidato>();
+
+                lista.Add(null);
+            
+        }
+
+
+
+        public List<Candidato> GetLista() { return lista; }
+
         public void Print()
         {
-            Console.WriteLine($"Nome: {GetName()} \nVagas: {GetVaga()}\n");
+            foreach (Candidato candidato in lista)
+            {
+                if (candidato != null) // Verificar se o candidato não é nulo
+                {
+                    candidato.Print(); // Chama o método Print() do candidato
+                }
+            }
         }
+
+
     }
 
 

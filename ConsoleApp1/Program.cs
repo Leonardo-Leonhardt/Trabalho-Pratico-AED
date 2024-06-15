@@ -11,6 +11,7 @@ namespace Facudade
         static int numAluno;
         static Curso[] curso;
         static Candidato[] candidato;
+        static ListaCurso[] listaCursos;
         static Dictionary<int, Curso> cursoComId = new Dictionary<int, Curso>();
 
         static void Main(string[] args)
@@ -22,7 +23,7 @@ namespace Facudade
             {
                 string linha;
                 int valor1 = 0;
-                int valor2 = 0;                
+                int valor2 = 0;
 
                 while ((linha = reader.ReadLine()) != null)
                 {
@@ -87,6 +88,37 @@ namespace Facudade
                     Console.WriteLine($"Nome: {aluno.GetNome()}, Nota Média: {aluno.GetNotaMedia()}, Opção 1: {aluno.GetOpcao1()}, Opção 2: {aluno.GetOpcao2()}");
                 }
 
+                // Inicializar o array listaCursos com objetos ListaCurso
+                listaCursos = new ListaCurso[numMateria];
+                for (int i = 0; i < numMateria; i++)
+                {
+                    listaCursos[i] = new ListaCurso();
+                }
+
+                // Iterar sobre os cursos
+                for (int i = 0; i < numMateria; i++)
+                {
+                    int id = cursoComId.Keys.ElementAt(i);
+
+                    for (int j = 0; j < numAluno; j++)
+                    {
+                        if (candidato[j].GetOpcao1() == id ) // Verificar a segunda opção
+                        {
+                            // Atribuir o ListaCurso ao índice correto
+                            listaCursos[i].GetLista().Add(candidato[j]);
+                        }
+                    }
+                }
+
+                // Imprimir a lista de cursos e candidatos
+                for (int i = 0; i < numMateria; i++)
+                {
+                    // Imprimir o nome do curso
+                    Console.WriteLine($"\n{curso[i].GetName()}");
+
+                    // Imprimir os candidatos do curso
+                    listaCursos[i].Print();
+                }
 
 
                 Console.ReadKey();
@@ -101,6 +133,7 @@ namespace Facudade
                 numMateria = Convert.ToInt32(valores[0]);
 
                 curso = new Curso[numMateria];
+                listaCursos = new ListaCurso[numMateria];
 
             }
             catch { Console.WriteLine("Erro: A string não é um número válido.??"); } // Exceção
