@@ -80,7 +80,7 @@ namespace Facudade
 
             while (i < n1 && j < n2)
             {
-                if (leftArray[i].GetNotaMedia() >= rightArray[j].GetNotaMedia())
+                if (CompararCandidatos(leftArray[i], rightArray[j]) >= 0)
                 {
                     candidatos[k] = leftArray[i];
                     i++;
@@ -109,6 +109,31 @@ namespace Facudade
                 j++;
                 k++;
             }
+        }
+
+        // Método para comparar dois candidatos considerando múltiplos critérios
+        private static int CompararCandidatos(Candidato candidato1, Candidato candidato2)
+        {
+            // 1. Comparar notas médias
+            if (candidato1.GetNotaMedia() != candidato2.GetNotaMedia())
+            {
+                return candidato1.GetNotaMedia().CompareTo(candidato2.GetNotaMedia());
+            }
+
+            // 2. Se notas médias forem iguais, comparar notas de redação
+            if (candidato1.GetNotaRedacao() != candidato2.GetNotaRedacao())
+            {
+                return candidato1.GetNotaRedacao().CompareTo(candidato2.GetNotaRedacao());
+            }
+
+            // 3. Se notas de redação forem iguais, comparar notas de matemática
+            if (candidato1.GetNotaMatematica() != candidato2.GetNotaMatematica())
+            {
+                return candidato1.GetNotaMatematica().CompareTo(candidato2.GetNotaMatematica());
+            }
+
+            // 4. Se todas as notas anteriores forem iguais, comparar notas de linguagens
+            return candidato1.GetNotaLinguagem().CompareTo(candidato2.GetNotaLinguagem());
         }
 
         // Método para ordenar recursivamente o array de candidatos usando Merge Sort
